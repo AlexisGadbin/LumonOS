@@ -1,5 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Reward } from "../../utils/types";
+import Footer from "../components/footer";
 import RewardCard from "../components/rewards/reward-card";
 import AppTheme from "../theme";
 
@@ -56,7 +57,7 @@ const rewards: Reward[] = [
   }
 ];
 
-const Rewards = () => {
+const RewardsPage = () => {
   
   const styles = StyleSheet.create({
     contentContainer: {
@@ -106,9 +107,10 @@ const Rewards = () => {
             <RewardCard key={reward.id} reward={reward} />
           ))}
         </View>
+        <Footer/>
       </ScrollView>
     </View>
   );
 };
 
-export default Rewards;
+export default RewardsPage;

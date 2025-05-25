@@ -6,3 +6,9 @@ export type Reward = {
     price: number;
   }
   
+  export type Message = {
+    id: string;
+    author: string;
+    content: string;
+    isRead: boolean;
+  }

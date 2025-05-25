@@ -5,7 +5,7 @@ import HomeHeader from "../components/home/home-header";
 import Progress from "../components/home/progress";
 import AppTheme from "../theme";
 
-const Home = () => {
+const HomePage = () => {
 
   const styles = StyleSheet.create({
     contentContainer: {
@@ -49,4 +49,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

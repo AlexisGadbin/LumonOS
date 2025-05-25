@@ -2,7 +2,7 @@ import { useTheme } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 import AppTheme from "../theme";
 
-const Refinment = () => {
+const RefinmentPage = () => {
   const { colors } = useTheme();
   
   const styles = StyleSheet.create({
@@ -35,4 +35,4 @@ const Refinment = () => {
   );
 };
 
-export default Refinment;
+export default RefinmentPage;

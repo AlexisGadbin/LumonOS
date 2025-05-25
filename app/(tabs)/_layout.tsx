@@ -74,7 +74,7 @@ export default function TabsLayout() {
           <Tabs.Screen
             name="rewards"
             options={{
-              tabBarLabel: "Rewards",
+              tabBarLabel: "Reward",
               tabBarIcon: ({ color }) => (
                 <RewardIcon color={color} size={24} />
               ),

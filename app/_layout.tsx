@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import { AppTheme } from "./theme";
 
 export default function RootLayout() {
@@ -20,7 +19,6 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
-      <StatusBar style="light" />
     </ThemeProvider>
   );
 }
