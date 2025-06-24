@@ -1,8 +1,9 @@
 import AppTheme from "@/app/theme";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import { useSharedValue } from "react-native-reanimated";
+import { runOnJS, useSharedValue } from "react-native-reanimated";
+import TooltipError from "../tooltip-error";
 import Fold from "./fold";
 
 const Rolodex = () => {
@@ -14,6 +15,7 @@ const Rolodex = () => {
     useSharedValue(0),
   ];
   const initialRotation = useSharedValue(0);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const styles = StyleSheet.create({
     container: {
@@ -45,6 +47,15 @@ const Rolodex = () => {
 
   return (
     <View style={styles.container}>
+      {showTooltip && (
+        <TooltipError
+          containerStyle={{
+            top: -140,
+          }}
+          onPress={() => setShowTooltip(false)}
+          message="you’re not allowed to access this file outside of the office Come back now!"
+        />
+      )}
       {foldNames.map((name, index) => {
         const panGesture = Gesture.Pan()
           .onBegin(() => {
@@ -64,8 +75,18 @@ const Rolodex = () => {
             }
           });
 
+        const tapGesture = Gesture.Tap().onEnd(() => {
+          if (rotations[index].value === 0) {
+            if ([0, 1].includes(index)) {
+              runOnJS(setShowTooltip)(true);
+            }
+          }
+        });
+
+        const composedGesture = Gesture.Race(panGesture, tapGesture);
+
         return (
-          <GestureDetector key={index} gesture={panGesture}>
+          <GestureDetector key={index} gesture={composedGesture}>
             <Fold number={index + 1} name={name} rotation={rotations[index]} />
           </GestureDetector>
         );
