@@ -55,7 +55,7 @@ export default function TabsLayout() {
           <Tabs
             screenOptions={{
               tabBarStyle: {
-                backgroundColor: "#000000",
+                backgroundColor: "transparent",
                 borderTopWidth: 0,
                 height: 60 + bottomPadding,
                 paddingBottom: bottomPadding,
@@ -63,8 +63,8 @@ export default function TabsLayout() {
               },
               tabBarActiveTintColor: AppTheme.colors.primary,
               tabBarInactiveTintColor: AppTheme.colors.secondary,
-              tabBarActiveBackgroundColor: "#000",
-              tabBarInactiveBackgroundColor: "#000",
+              tabBarActiveBackgroundColor: "transparent",
+              tabBarInactiveBackgroundColor: "transparent",
               tabBarLabelStyle: {
                 fontFamily: "VT323",
                 fontSize: 16,

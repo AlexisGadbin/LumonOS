@@ -74,7 +74,7 @@ const Vignettage = () => {
           mode="luminance"
           mask={
             <Group>
-              <BlurMask blur={24} style="inner" />
+              <BlurMask blur={16} style="normal" />
               <Rect x={0} y={0} width={width} height={height} color="white" />
               <Oval
                 x={width / 2 - widthElipsis1 / 2}
@@ -108,7 +108,7 @@ const Vignettage = () => {
           mode="luminance"
           mask={
             <Group>
-              <BlurMask blur={24} style="inner" />
+              <BlurMask blur={24} style="normal" />
               <Rect x={0} y={0} width={width} height={height} color="white" />
               <Oval
                 x={width / 2 - widthElipsis2 / 2}
