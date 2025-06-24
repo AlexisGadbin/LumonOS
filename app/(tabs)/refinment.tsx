@@ -4,7 +4,7 @@ import Rolodex from "../components/refinment/rolodex";
 
 const RefinmentPage = () => {
   const { colors } = useTheme();
-  
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,

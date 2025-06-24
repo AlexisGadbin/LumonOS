@@ -4,7 +4,6 @@ import Footer from "../components/footer";
 import RewardCard from "../components/rewards/reward-card";
 import AppTheme from "../theme";
 
-
 const rewards: Reward[] = [
   {
     id: "1",
@@ -54,18 +53,17 @@ const rewards: Reward[] = [
     image: "secret",
     isUnlocked: false,
     price: 99999,
-  }
+  },
 ];
 
 const RewardsPage = () => {
-  
   const styles = StyleSheet.create({
     contentContainer: {
       padding: 20,
       paddingHorizontal: 40,
       marginTop: 64,
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
       gap: 24,
     },
     title: {
@@ -83,14 +81,14 @@ const RewardsPage = () => {
     divider: {
       height: 2,
       backgroundColor: AppTheme.colors.primary,
-      width: '100%',
+      width: "100%",
     },
     rewardsContainer: {
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'space-between',
-    }
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "space-between",
+    },
   });
 
   return (
@@ -99,15 +97,15 @@ const RewardsPage = () => {
         {/* <Vignettage /> */}
         <Text style={styles.title}>Rewards</Text>
         <Text style={styles.count}>
-          {rewards.filter(r => r.isUnlocked).length}/{rewards.length} unlocked
+          {rewards.filter((r) => r.isUnlocked).length}/{rewards.length} unlocked
         </Text>
-        <View style={styles.divider}/>
+        <View style={styles.divider} />
         <View style={styles.rewardsContainer}>
           {rewards.map((reward) => (
             <RewardCard key={reward.id} reward={reward} />
           ))}
         </View>
-        <Footer/>
+        <Footer />
       </ScrollView>
     </View>
   );

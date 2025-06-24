@@ -8,7 +8,8 @@ const messages: Message[] = [
   {
     id: "1",
     author: "Mr. Milchick",
-    content: "The work is mysterious and important Basti U. Meet me in the break room now.",
+    content:
+      "The work is mysterious and important Basti U. Meet me in the break room now.",
     isRead: false,
   },
   {
@@ -40,7 +41,7 @@ const messages: Message[] = [
     author: "Ms. Casey",
     content: "You’re Outie can design 100 buttons in 100 minutes.",
     isRead: true,
-  }
+  },
 ];
 
 const MessagePage = () => {
@@ -49,8 +50,8 @@ const MessagePage = () => {
       padding: 20,
       paddingHorizontal: 40,
       marginTop: 64,
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
       gap: 24,
     },
     title: {
@@ -68,13 +69,13 @@ const MessagePage = () => {
     divider: {
       height: 2,
       backgroundColor: AppTheme.colors.primary,
-      width: '100%',
+      width: "100%",
     },
     messagesContainer: {
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
       gap: 16,
-    }
+    },
   });
 
   return (
@@ -82,20 +83,22 @@ const MessagePage = () => {
       <ScrollView contentContainerStyle={styles.contentContainer}>
         {/* <Vignettage /> */}
         <Text style={styles.title}>Message</Text>
-        <Text style={styles.count}>
-          1 unread message
-        </Text>
-        <View style={styles.divider}/>
+        <Text style={styles.count}>1 unread message</Text>
+        <View style={styles.divider} />
         <View style={styles.messagesContainer}>
-          {messages.filter(m => !m.isRead).map((message) => (
-            <MessageRow key={message.id} message={message} />
-          ))}
-        <View style={styles.divider}/>
-          {messages.filter(m => m.isRead).map((message) => (
-            <MessageRow key={message.id} message={message} />
-          ))}
+          {messages
+            .filter((m) => !m.isRead)
+            .map((message) => (
+              <MessageRow key={message.id} message={message} />
+            ))}
+          <View style={styles.divider} />
+          {messages
+            .filter((m) => m.isRead)
+            .map((message) => (
+              <MessageRow key={message.id} message={message} />
+            ))}
         </View>
-        <Footer/>
+        <Footer />
       </ScrollView>
     </View>
   );

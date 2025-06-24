@@ -5,16 +5,15 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { AppTheme } from "./theme";
 
 export default function RootLayout() {
-    const [loaded] = useFonts({
-      VT323: require('../assets/fonts/VT323-Regular.ttf'),
-    });
-  
-    if (!loaded) {
-      // Async font loading only occurs in development.
-      return null;
-    }
+  const [loaded] = useFonts({
+    VT323: require("../assets/fonts/VT323-Regular.ttf"),
+  });
 
-    
+  if (!loaded) {
+    // Async font loading only occurs in development.
+    return null;
+  }
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={AppTheme}>

@@ -6,9 +6,9 @@ interface HomeIconProps {
   size?: number;
 }
 
-const HomeIcon: React.FC<HomeIconProps> = ({ 
-  color = "#93EEF3", 
-  size = 24 
+const HomeIcon: React.FC<HomeIconProps> = ({
+  color = "#93EEF3",
+  size = 24,
 }) => {
   return (
     <Svg width={size} height={size} viewBox="0 0 34 35" fill="none">

@@ -6,9 +6,9 @@ interface RewardIconProps {
   size?: number;
 }
 
-const RewardIcon: React.FC<RewardIconProps> = ({ 
-  color = "#93EEF3", 
-  size = 24 
+const RewardIcon: React.FC<RewardIconProps> = ({
+  color = "#93EEF3",
+  size = 24,
 }) => {
   return (
     <Svg width={size} height={size} viewBox="0 0 32 32" fill="none">

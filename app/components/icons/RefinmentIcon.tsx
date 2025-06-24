@@ -6,9 +6,9 @@ interface RefinmentIconProps {
   size?: number;
 }
 
-const RefinmentIcon: React.FC<RefinmentIconProps> = ({ 
-  color = "#93EEF3", 
-  size = 24 
+const RefinmentIcon: React.FC<RefinmentIconProps> = ({
+  color = "#93EEF3",
+  size = 24,
 }) => {
   return (
     <Svg width={size} height={size} viewBox="0 0 32 32" fill="none">
