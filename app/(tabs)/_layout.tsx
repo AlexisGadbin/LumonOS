@@ -10,9 +10,9 @@ import AppTheme from "../theme";
 
 export default function TabsLayout() {
   const insets = useSafeAreaInsets();
-  
+
   const bottomPadding = Platform.OS === "ios" ? insets.bottom : 6;
-  
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -24,10 +24,10 @@ export default function TabsLayout() {
     image: {
       ...StyleSheet.absoluteFillObject,
       zIndex: 1000000,
-      pointerEvents: 'none',
-    }
+      pointerEvents: "none",
+    },
   });
-  
+
   return (
     <View
       style={{
@@ -59,6 +59,7 @@ export default function TabsLayout() {
                 borderTopWidth: 0,
                 height: 60 + bottomPadding,
                 paddingBottom: bottomPadding,
+                zIndex: 1000,
               },
               tabBarActiveTintColor: AppTheme.colors.primary,
               tabBarInactiveTintColor: AppTheme.colors.secondary,
