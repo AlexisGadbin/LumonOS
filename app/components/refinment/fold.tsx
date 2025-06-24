@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Animated, { SharedValue, useAnimatedStyle } from 'react-native-reanimated';
 import Svg, { Path, Text as SvgText } from 'react-native-svg';
@@ -12,7 +12,6 @@ type Props = {
 
 const Fold = (props: Props) => {
     const { number, name, rotation } = props;
-    const [flipped, setFlipped] = useState(false);
     const width = 220;
     const height = 140;
 
@@ -21,9 +20,7 @@ const Fold = (props: Props) => {
             width: width,
             height: height,
             position: 'absolute',
-            transformOrigin: 'bottom',
-            backgroundColor: 'blue',
-            
+            transformOrigin: 'bottom',            
         },
         container: {
             width: width,
@@ -40,8 +37,7 @@ const Fold = (props: Props) => {
         tab: {
             position: 'absolute',
             top: -18,
-            left: flipped ? undefined : (number * width / 6) - (width / 6),
-            right: flipped ? (number * width / 6) - (width / 6) : undefined,
+            left: (number * width / 6) - (width / 6),
             zIndex: 0,
         },
         name: {
@@ -52,16 +48,20 @@ const Fold = (props: Props) => {
     });
 
     const animatedStyle = useAnimatedStyle(() => {
-      const rotateX = `${rotation.value}deg`; // entre 0 et 180
+      const rotateX = `${rotation.value}deg`; // entre 0 et -180
+      const zIndex = -number;
       return {
         transform: [
-          {perspective: -800},
-          { translateY: 20 },
+          {perspective: 800},
+          { translateY: 10 },
           { rotateX },
-          { translateY: -20 }
-        ]
+          { translateY: -10 }
+        ],
+        zIndex: zIndex,
       };
     });
+
+    const isFlipped = false
 
     return (
       <Animated.View style={[styles.fold, animatedStyle]}>
@@ -72,7 +72,7 @@ const Fold = (props: Props) => {
             stroke={AppTheme.colors.secondary}
             strokeWidth={4}
           />
-          {!flipped && (
+          {!isFlipped && (
             <SvgText
               x="33"
               y="22"
@@ -88,7 +88,7 @@ const Fold = (props: Props) => {
         </Svg>
 
         <View style={styles.container}>
-        {!flipped && (
+        {!isFlipped && (
             <Text style={styles.name}>{name}</Text>
         )}
         </View>
