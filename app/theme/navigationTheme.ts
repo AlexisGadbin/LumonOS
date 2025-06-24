@@ -14,7 +14,7 @@ export const AppTheme = {
     primary: foreground,
     secondary: secondary,
     secondary2: secondary2,
-    background: "#000",
+    background: secondary,
   },
 };
 

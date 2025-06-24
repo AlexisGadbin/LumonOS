@@ -32,19 +32,18 @@ const HomePage = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-        {/* <Vignettage /> */}
-        <HomeHeader />
-        <View style={styles.progressContainer}>
-          <Text style={styles.progressTitle}>Today's objectives</Text>
-          <Progress progress={28} delay={100} />
-          <Progress progress={15} delay={500} />
-          <Progress progress={50} delay={1000} />
-          <Progress progress={73} delay={1500} />
-        </View>
-        <Checklist />
-        <Footer />
-      </ScrollView>
+        <ScrollView contentContainerStyle={styles.contentContainer}>
+          <HomeHeader />
+          <View style={styles.progressContainer}>
+            <Text style={styles.progressTitle}>Today&apos;s objectives</Text>
+            <Progress progress={28} delay={100} />
+            <Progress progress={15} delay={500} />
+            <Progress progress={50} delay={1000} />
+            <Progress progress={73} delay={1500} />
+          </View>
+          <Checklist />
+          <Footer />
+        </ScrollView>
     </View>
   );
 };
