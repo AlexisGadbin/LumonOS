@@ -43,6 +43,12 @@ const messages: Message[] = [
     content: "You’re Outie can design 100 buttons in 100 minutes.",
     isRead: true,
   },
+  {
+    id: "7",
+    author: "Alexis G.",
+    content: "Hey ! Thanks for looking my work. I hope you like it.",
+    isRead: true,
+  },
 ];
 
 const MessagePage = () => {
@@ -89,7 +95,6 @@ const MessagePage = () => {
   return (
     <View style={{ flex: 1, position: "relative" }}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
-        {/* <Vignettage /> */}
         <Text style={styles.title}>Message</Text>
         <Text style={styles.count}>1 unread message</Text>
         <View style={styles.divider} />

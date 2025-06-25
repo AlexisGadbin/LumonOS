@@ -23,6 +23,8 @@ const MessageRow = (props: Props) => {
         return require("../../../assets/images/avatars/dylan-f.png");
       case "Ms. Casey":
         return require("../../../assets/images/avatars/ms-casey.png");
+      case "Alexis G.":
+        return require("../../../assets/images/avatars/alexis-g.png");
       default:
         return require("../../../assets/images/avatars/mr-milchick.png");
     }
