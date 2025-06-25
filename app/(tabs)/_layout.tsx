@@ -106,6 +106,13 @@ export default function TabsLayout() {
                 ),
               }}
             />
+            <Tabs.Screen
+              name="refinment-wall"
+              options={{
+                href: null,
+                headerShown: false,
+              }}
+            />
           </Tabs>
         </View>
       </View>

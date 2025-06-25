@@ -1,4 +1,5 @@
 import AppTheme from "@/app/theme";
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
@@ -20,6 +21,8 @@ const Rolodex = () => {
   const wheelRotation = useSharedValue(0);
   const staticRotation = useSharedValue(-180);
 
+  const router = useRouter();
+
   const styles = StyleSheet.create({
     container: {
       display: "flex",
@@ -28,7 +31,6 @@ const Rolodex = () => {
       alignItems: "center",
       justifyContent: "center",
       height: 140,
-      //Translate y
       transform: [{ translateY: -70 }],
     },
     rectanglesContainer: {
@@ -96,6 +98,8 @@ const Rolodex = () => {
           if (rotations[index].value === 0) {
             if ([0, 1].includes(index)) {
               runOnJS(setShowTooltip)(true);
+            } else {
+              runOnJS(router.push)("/(tabs)/refinment-wall");
             }
           }
         });
