@@ -1,6 +1,6 @@
 import AppTheme from "@/app/theme";
 import { useTheme } from "@react-navigation/native";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Animated, {
   Easing,
@@ -21,7 +21,7 @@ const Progress: React.FC<ProgressProps> = ({
   delay = 1000,
 }) => {
   const { colors } = useTheme();
-  const [containerWidth, setContainerWidth] = React.useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
 
   const clampedProgress = Math.max(0, Math.min(100, progress));
 

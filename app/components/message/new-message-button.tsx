@@ -1,5 +1,5 @@
 import AppTheme from "@/app/theme";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
 import TooltipError from "../tooltip-error";
 

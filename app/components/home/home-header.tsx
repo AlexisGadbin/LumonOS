@@ -1,5 +1,4 @@
 import AppTheme from "@/app/theme/navigationTheme";
-import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Avatar from "../avatar";
 

@@ -6,7 +6,6 @@ import {
   Oval,
   Rect,
 } from "@shopify/react-native-skia";
-import React from "react";
 import { Dimensions, StyleSheet } from "react-native";
 
 const Vignettage = () => {

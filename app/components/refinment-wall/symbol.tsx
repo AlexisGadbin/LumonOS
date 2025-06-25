@@ -7,7 +7,6 @@ import {
   Text,
   vec,
 } from "@shopify/react-native-skia";
-import React from "react";
 import { useWindowDimensions } from "react-native";
 import type { SharedValue } from "react-native-reanimated";
 import { useDerivedValue } from "react-native-reanimated";
@@ -28,7 +27,7 @@ interface SymbolProps {
   clock: SharedValue<number>;
 }
 
-export const Symbol = ({ i, j, font, pointer, clock }: SymbolProps) => {
+const Symbol = ({ i, j, font, pointer, clock }: SymbolProps) => {
   const { width, height } = useWindowDimensions();
   const SIZE = { width: width / COLS, height: height / ROWS };
   const x = i * SIZE.width;
@@ -68,3 +67,5 @@ export const Symbol = ({ i, j, font, pointer, clock }: SymbolProps) => {
     </Group>
   );
 };
+
+export default Symbol;

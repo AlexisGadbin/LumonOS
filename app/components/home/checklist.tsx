@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AppTheme from "../../theme";
 import ChecklistRow from "./checklist-row";

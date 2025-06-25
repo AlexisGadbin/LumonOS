@@ -1,6 +1,5 @@
 import AppTheme from "@/app/theme";
 import { Message } from "@/utils/types";
-import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 type Props = {

@@ -14,12 +14,11 @@ import {
   useClock,
   useFont,
 } from "@shopify/react-native-skia";
-import React from "react";
 import { useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import { useSharedValue } from "react-native-reanimated";
 
-import { COLS, ROWS, Symbol } from "../components/refinment-wall/symbol";
+import Symbol, { COLS, ROWS } from "../components/refinment-wall/symbol";
 import AppTheme from "../theme";
 
 const rows = new Array(COLS).fill(0).map((_, i) => i);
