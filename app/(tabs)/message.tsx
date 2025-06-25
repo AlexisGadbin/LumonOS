@@ -2,6 +2,7 @@ import { Message } from "@/utils/types";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Footer from "../components/footer";
 import MessageRow from "../components/message/message-row";
+import NewMessageButton from "../components/message/new-message-button";
 import AppTheme from "../theme";
 
 const messages: Message[] = [
@@ -76,10 +77,17 @@ const MessagePage = () => {
       flexDirection: "column",
       gap: 16,
     },
+    floatingButtonContainer: {
+      position: "absolute",
+      bottom: 20,
+      left: 0,
+      right: 0,
+      alignItems: "center",
+    },
   });
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, position: "relative" }}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
         {/* <Vignettage /> */}
         <Text style={styles.title}>Message</Text>
@@ -100,6 +108,10 @@ const MessagePage = () => {
         </View>
         <Footer />
       </ScrollView>
+
+      <View style={styles.floatingButtonContainer}>
+        <NewMessageButton />
+      </View>
     </View>
   );
 };
