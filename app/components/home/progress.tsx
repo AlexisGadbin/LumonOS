@@ -42,7 +42,7 @@ const Progress: React.FC<ProgressProps> = ({
         easing: Easing.bezier(0, 0, 0.01, 1),
       });
     }, delay);
-  }, [targetWidth, animationDuration, delay]);
+  }, [targetWidth, animationDuration, delay, animatedWidth]);
 
   const styles = StyleSheet.create({
     progressContainer: {
